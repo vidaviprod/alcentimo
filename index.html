@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al Céntimo</title>
+<meta name="description" content="Al Céntimo: control de gastos y reparto de gastos entre amigos, con tus datos en tu móvil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F4EF; --surface: #FFFFFF; --fg: #1B1A16; --muted: #67655B;
+    --line: #D3D1C7; --brand: #F2C230; --on-brand: #1C1700; --link: #8A6500;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151513; --surface: #1F1F1C; --fg: #F3F1EA; --muted: #A6A398;
+            --line: #3B3A34; --link: #F2C230; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 400 17px/1.6 "Barlow", system-ui, sans-serif; }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  a { color: var(--link); }
+  .tag { display: inline-flex; align-items: center; gap: .6rem; background: var(--brand); color: var(--on-brand);
+         border-radius: 10px 999px 999px 10px; padding: .35rem 1.1rem .35rem .9rem;
+         font: 700 1rem/1 "Barlow Condensed", sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+  .tag::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: var(--bg); }
+  h1 { font: 700 3.2rem/1.05 "Barlow Condensed", "Barlow", sans-serif; margin: 1.25rem 0 .5rem; text-wrap: balance; }
+  .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 2rem; max-width: 36rem; }
+  .features { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); padding: 0; margin: 0; list-style: none; }
+  .features li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+  .features strong { display: block; font: 600 1.15rem/1.2 "Barlow Condensed", sans-serif; margin-bottom: .25rem; }
+  .features span { color: var(--muted); font-size: .98rem; }
+  .privacy { margin-top: 2rem; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem;
+           display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <span class="tag">App para Android</span>
+  <h1>Al Céntimo</h1>
+  <p class="lead">Controla en qué se va tu dinero y reparte los gastos con tus amigos, sin cuentas ni anuncios.
+  Tus datos se quedan en tu móvil.</p>
+
+  <ul class="features">
+    <li><strong>Gastos e ingresos</strong><span>Apunta movimientos en segundos y mira cuánto te sobra o te falta cada mes.</span></li>
+    <li><strong>Gastos compartidos</strong><span>Grupos para repartir cenas y viajes, y un registro de quién te debe y a quién debes.</span></li>
+    <li><strong>Tickets y facturas</strong><span>Escanea tickets y prepara el resumen trimestral de IVA de tus facturas.</span></li>
+    <li><strong>Tus datos, tuyos</strong><span>Copia automática en una carpeta del móvil y, si quieres, sincronización con tu propio Google Drive.</span></li>
+  </ul>
+
+  <p class="privacy">Lee la <a href="privacidad.html">política de privacidad</a> para saber exactamente qué datos
+  maneja la app y dónde se guardan.</p>
+
+  <footer>
+    <span>Al Céntimo</span>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="mailto:vidaviprod@gmail.com">Contacto</a>
+  </footer>
+</main>
+</body>
+</html>

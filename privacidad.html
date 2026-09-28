@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · Al Céntimo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F4EF; --surface: #FFFFFF; --fg: #1B1A16; --muted: #67655B;
+    --line: #D3D1C7; --brand: #F2C230; --on-brand: #1C1700; --link: #8A6500;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151513; --surface: #1F1F1C; --fg: #F3F1EA; --muted: #A6A398;
+            --line: #3B3A34; --link: #F2C230; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 400 17px/1.6 "Barlow", system-ui, sans-serif; }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  a { color: var(--link); }
+  .back { display: inline-block; margin-bottom: 1.5rem; font-weight: 500; text-decoration: none; }
+  h1, h2 { font-family: "Barlow Condensed", "Barlow", sans-serif; line-height: 1.15; text-wrap: balance; }
+  h1 { font-size: 2.4rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.45rem; margin: 2.25rem 0 .5rem; }
+  .date { color: var(--muted); margin: 0 0 1.5rem; }
+  .summary { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--brand);
+             border-radius: 12px; padding: 1rem 1.25rem; }
+  .summary p { margin: 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  code { font-size: .9em; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0 .3em; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="./">← Al Céntimo</a>
+  <h1>Política de privacidad</h1>
+  <p class="date">Última actualización: 29 de septiembre de 2026</p>
+
+  <div class="summary">
+    <p><strong>En resumen:</strong> tus datos se guardan en tu móvil. Al Céntimo no tiene servidores, cuentas,
+    anuncios ni analítica, y el desarrollador no recibe ningún dato tuyo. Solo salen del móvil si activas
+    tú alguna función opcional (Gemini o la sincronización con Google Drive), y entonces van a tu propia
+    cuenta de Google, nunca a nosotros.</p>
+  </div>
+
+  <h2>Quién es el responsable</h2>
+  <p>Al Céntimo (paquete <code>dev.vidavi.spendly</code>) es una app para Android desarrollada por David, particular
+  residente en España. Para cualquier duda sobre privacidad puedes escribir a
+  <a href="mailto:vidaviprod@gmail.com">vidaviprod@gmail.com</a>.</p>
+
+  <h2>Qué datos maneja la app y dónde se guardan</h2>
+  <p>Todo lo que introduces (movimientos, categorías, perfiles, grupos de gastos compartidos, deudas y sus
+  fotos, y los datos leídos de tus facturas) se guarda en una base de datos privada dentro de tu móvil.
+  No se envía a ningún servidor del desarrollador, porque no existe ninguno.</p>
+  <ul>
+    <li><strong>Cámara:</strong> se usa solo para escanear tickets. El reconocimiento del texto se hace en el propio móvil.</li>
+    <li><strong>Carpetas y archivos que eliges:</strong> la app solo accede a las carpetas o archivos que tú seleccionas
+      (copia automática, facturas, importar o exportar datos, fotos de perfil).</li>
+    <li><strong>Widget:</strong> muestra en tu pantalla de inicio un resumen de tus datos; no los envía a ningún sitio.</li>
+  </ul>
+
+  <h2>Funciones opcionales que envían datos a Google</h2>
+  <p>Estas funciones vienen desactivadas. Solo se usan si tú las activas, y puedes desactivarlas cuando quieras
+  desde <em>Más › Ajustes</em>.</p>
+
+  <p><strong>Interpretar tickets y facturas con Gemini.</strong> Si introduces tu propia clave de la API de Gemini,
+  las imágenes o PDF de los tickets y facturas que decidas interpretar se envían a la API de Gemini de Google
+  para extraer sus datos. Ese envío se hace con tu clave y queda sujeto a las condiciones de Google para esa API.
+  El desarrollador no ve esas imágenes ni sus resultados.</p>
+
+  <p><strong>Sincronizar con Google Drive.</strong> Si conectas tu cuenta de Google:</p>
+  <ul>
+    <li>La app pide únicamente el permiso <code>drive.appdata</code>: acceso a una carpeta oculta y privada de la propia
+      app dentro de tu Google Drive. No puede ver, leer ni modificar ningún otro archivo de tu Drive.</li>
+    <li>En esa carpeta guarda un único fichero con tus datos de la app (los mismos que al usar "Exportar datos"),
+      junto con el nombre del dispositivo desde el que se guardó, para que puedas pasarlos a otro dispositivo.</li>
+    <li>Lee la dirección de correo de tu cuenta solo para mostrarte en Ajustes con qué cuenta estás conectado.</li>
+    <li>Esos datos viajan directamente entre tu móvil y tu Google Drive. No pasan por ningún servidor del
+      desarrollador ni se comparten, venden o ceden a terceros, y no se usan para publicidad ni para entrenar
+      modelos de inteligencia artificial.</li>
+    <li>Puedes desconectar la cuenta y borrar esa copia desde <em>Ajustes › Sincronizar con Google Drive</em>, o
+      retirar el permiso en cualquier momento desde
+      <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</li>
+  </ul>
+  <p>El uso y la transferencia a cualquier otra app de la información recibida de las API de Google se ajustan a la
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Política de datos de usuario
+  de los servicios de API de Google</a>, incluidos los requisitos de uso limitado.</p>
+
+  <h2>Copias y exportaciones</h2>
+  <p>La copia automática se guarda en la carpeta de tu móvil que tú elijas, y las exportaciones (copias, informes,
+  Excel) se generan en tu móvil para que las guardes o compartas donde decidas. Lo que ocurra con esos archivos
+  una vez compartidos depende del sitio al que los envíes.</p>
+
+  <h2>Cuánto tiempo se guardan y cómo borrarlos</h2>
+  <p>Los datos permanecen en tu móvil hasta que los borras desde la app o desinstalas la app. Las copias que
+  hayas guardado en una carpeta o en Google Drive son tuyas y las controlas tú: puedes borrarlas desde la app
+  (la de Drive) o desde tu gestor de archivos.</p>
+
+  <h2>Menores</h2>
+  <p>La app no está dirigida a menores de 14 años ni recoge conscientemente datos suyos.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Como el desarrollador no guarda datos tuyos, no hay nada que consultar, corregir o borrar por su parte: todo
+  está en tu dispositivo y en tu cuenta de Google. Aun así, puedes escribir al correo de contacto para cualquier
+  consulta. También tienes derecho a reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+
+  <h2>Cambios en esta política</h2>
+  <p>Si la app cambia su forma de tratar los datos, se actualizará esta página y la fecha de arriba.</p>
+
+  <footer>Al Céntimo · <a href="./">Inicio</a></footer>
+</main>
+</body>
+</html>
