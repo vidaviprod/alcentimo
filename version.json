@@ -1,0 +1,28 @@
+{
+  "version": "1.5.2",
+  "fecha": "2026-10-20",
+  "tamano": 115355507,
+  "novedades": [
+    "Inicio: ya no aparece scroll cuando no hay ningún aviso de presupuesto."
+  ],
+  "anteriores": [
+    {
+      "version": "1.5.1",
+      "fecha": "2026-10-20",
+      "novedades": [
+        "**Apuntar con una frase (beta), ahora por voz**: botón de micrófono en el cuadro de texto del widget; lo dictado se escribe y se interpreta directamente.",
+        "Ejemplos de ayuda más claros en el cuadro de texto."
+      ]
+    },
+    {
+      "version": "1.5.0",
+      "fecha": "2026-10-20",
+      "novedades": [
+        "**Gastos recurrentes**: se apuntan solos en su fecha, también con la app cerrada, y se pueden pausar, editar y borrar.",
+        "**Presupuestos por categoría**: límite mensual con aviso al llegar al 80 %, al alcanzar el límite y si lo superas.",
+        "**Tickets y recibos en los grupos**: la foto del ticket se guarda en el grupo; en los compartidos viaja cifrada.",
+        "**Apuntar con una frase (beta)**: desde el widget, con Gemma descargado, entiende frases como «Cena de 60 € con dos amigos, pagué yo»."
+      ]
+    }
+  ]
+}

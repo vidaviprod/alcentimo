@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 14 80 80" width="512" height="512">
+  <!-- Icono de Al Céntimo, sacado de res/drawable/ic_launcher_{background,foreground}.xml -->
+  <rect x="14" y="14" width="80" height="80" rx="18" fill="#F2C230"/>
+  <g transform="rotate(-25 54 54)">
+    <path fill="#1C1700" d="M35,54 L45,41.5 L74,41.5 Q76,41.5 76,43.5 L76,64.5 Q76,66.5 74,66.5 L45,66.5 Z"/>
+    <circle cx="43" cy="54" r="3" fill="#F2C230"/>
+    <path stroke="#F2C230" stroke-width="2.8" stroke-linecap="round" d="M53,50 L68,50 M53,58 L62,58"/>
+  </g>
+</svg>

@@ -1,64 +1,443 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Al Céntimo</title>
-<meta name="description" content="Al Céntimo: control de gastos y reparto de gastos entre amigos, con tus datos en tu móvil.">
+<title>Al Céntimo · Gastos y cuentas con amigos, para Android</title>
+<meta name="description" content="Al Céntimo es una app gratuita para Android para controlar tus gastos y repartir cuentas con los amigos. Sin anuncios ni cuentas: tus datos se quedan en tu móvil. Descarga el APK.">
+<meta name="theme-color" content="#F2C230">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="icon" href="img/icono-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="img/icono-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Al Céntimo">
+<meta property="og:title" content="Al Céntimo · Tus gastos, al céntimo">
+<meta property="og:description" content="Controla tus gastos y deja las cuentas claras con los amigos. Gratis para Android, sin anuncios ni cuentas.">
+<meta property="og:url" content="https://vidaviprod.github.io/alcentimo/">
+<meta property="og:image" content="https://vidaviprod.github.io/alcentimo/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Al Céntimo: tus gastos, al céntimo. App gratuita para Android.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #F5F4EF; --surface: #FFFFFF; --fg: #1B1A16; --muted: #67655B;
-    --line: #D3D1C7; --brand: #F2C230; --on-brand: #1C1700; --link: #8A6500;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #151513; --surface: #1F1F1C; --fg: #F3F1EA; --muted: #A6A398;
-            --line: #3B3A34; --link: #F2C230; color-scheme: dark; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 400 17px/1.6 "Barlow", system-ui, sans-serif; }
-  .wrap { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-  a { color: var(--link); }
-  .tag { display: inline-flex; align-items: center; gap: .6rem; background: var(--brand); color: var(--on-brand);
-         border-radius: 10px 999px 999px 10px; padding: .35rem 1.1rem .35rem .9rem;
-         font: 700 1rem/1 "Barlow Condensed", sans-serif; letter-spacing: .04em; text-transform: uppercase; }
-  .tag::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: var(--bg); }
-  h1 { font: 700 3.2rem/1.05 "Barlow Condensed", "Barlow", sans-serif; margin: 1.25rem 0 .5rem; text-wrap: balance; }
-  .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 2rem; max-width: 36rem; }
-  .features { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); padding: 0; margin: 0; list-style: none; }
-  .features li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
-  .features strong { display: block; font: 600 1.15rem/1.2 "Barlow Condensed", sans-serif; margin-bottom: .25rem; }
-  .features span { color: var(--muted); font-size: .98rem; }
-  .privacy { margin-top: 2rem; }
-  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem;
-           display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.replace("no-js", "js");</script>
 </head>
 <body>
-<main class="wrap">
-  <span class="tag">App para Android</span>
-  <h1>Al Céntimo</h1>
-  <p class="lead">Controla en qué se va tu dinero y reparte los gastos con tus amigos, sin cuentas ni anuncios.
-  Tus datos se quedan en tu móvil.</p>
 
-  <ul class="features">
-    <li><strong>Gastos e ingresos</strong><span>Apunta movimientos en segundos y mira cuánto te sobra o te falta cada mes.</span></li>
-    <li><strong>Gastos compartidos</strong><span>Grupos para repartir cenas y viajes, y un registro de quién te debe y a quién debes.</span></li>
-    <li><strong>Tickets y facturas</strong><span>Escanea tickets y prepara el resumen trimestral de IVA de tus facturas.</span></li>
-    <li><strong>Tus datos, tuyos</strong><span>Copia automática en una carpeta del móvil y, si quieres, sincronización con tu propio Google Drive.</span></li>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-inicio" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+  <symbol id="i-movs" viewBox="0 0 24 24"><path d="M19.5 3.5 18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5zM19 19.1H5V4.9h14v14.2zM6 15h12v2H6zm0-4h12v2H6zm0-4h12v2H6z"/></symbol>
+  <symbol id="i-informes" viewBox="0 0 24 24"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></symbol>
+  <symbol id="i-grupo" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+  <symbol id="i-mas" viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></symbol>
+  <symbol id="i-ia" viewBox="0 0 24 24"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></symbol>
+  <symbol id="i-bajar" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4h2v9.2l3.6-3.6L18 11l-6 6-6-6 1.4-1.4 3.6 3.6zM5 19h14v2H5z"/></symbol>
+</svg>
+
+<div class="aviso-version" id="aviso-version" role="status" hidden>
+  <p>Hay una versión nueva: <strong data-v="version">v1.5.2</strong>. <a class="js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">Descárgala e instálala encima</a>; no pierdes nada.</p>
+  <button type="button" id="cerrar-aviso">Cerrar</button>
+</div>
+
+<header class="cabecera sobre-marca">
+  <a class="logo logo-tinta" href="#arriba" aria-label="Al Céntimo, inicio">AL CÉNTIMO</a>
+  <nav aria-label="Secciones">
+    <a class="enlace" href="#que-hace">Qué hace</a>
+    <a class="enlace" href="#novedades">Novedades</a>
+    <a class="enlace" href="#privacidad">Privacidad</a>
+    <a class="enlace" href="#instalar">Instalar</a>
+    <a class="boton boton-tinta js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">Descargar</a>
+  </nav>
+</header>
+
+<main id="arriba">
+
+<section class="portada sobre-marca" aria-labelledby="titulo">
+  <div>
+    <h1 id="titulo" class="sube">Tus gastos, al céntimo.</h1>
+    <p class="sub sube" style="--d:80ms">Y las cuentas claras con los amigos. <strong>Al Céntimo</strong> es una app para Android, gratis, sin anuncios y sin cuentas que crear.</p>
+    <div class="descarga sube" style="--d:160ms">
+      <a class="boton boton-tinta js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">
+        <svg aria-hidden="true"><use href="#i-bajar"/></svg>
+        <span>Descargar para Android<small>APK · <span data-v="version">v1.5.2</span> · <span data-v="tamano">115 MB</span></small></span>
+      </a>
+      <p class="ficha"><strong>Gratis.</strong> Android 8.0 o superior.<br>Actualizada el <span data-v="fecha">20 de octubre de 2026</span>.</p>
+    </div>
+    <div class="solo-android" id="solo-android" hidden>
+      <div class="qr" id="qr"></div>
+      <div><p class="t">Al Céntimo es solo para Android</p><p>Abre esta página desde tu móvil: apunta la cámara a este código. Si prefieres, descarga aquí el APK y pásalo al móvil.</p></div>
+    </div>
+  </div>
+
+  <div class="escena-movil sube" style="--d:120ms">
+    <div class="movil">
+      <div class="pantalla" data-ui role="img" aria-label="Pantalla de Inicio de Al Céntimo: saldo del mes y últimos movimientos">
+        <div class="ui" aria-hidden="true">
+          <div class="ui-estado"><span>9:41</span><span>▴ ◢ ▮</span></div>
+          <div class="ui-barra"><span class="logo">AL CÉNTIMO</span><span class="ui-avatar" style="background:#F2C230;color:#1C1700">D</span></div>
+          <div class="ui-cuerpo">
+            <span class="inicio-mes">Octubre ▾</span>
+            <div class="ui-tarjeta inicio-saldo">
+              <span class="ui-etiqueta">Te queda este mes</span>
+              <div class="precio" id="inicio-saldo"><span class="e">1.248</span><span class="cts">,50</span><span class="eur">€</span></div>
+              <div class="inicio-dos">
+                <div><span class="ui-etiqueta">Ingresos</span><span class="cifra entra" id="inicio-ing">+2.150,00 €</span></div>
+                <div><span class="ui-etiqueta">Gastos</span><span class="cifra sale" id="inicio-gas">−901,50 €</span></div>
+              </div>
+            </div>
+            <p class="ui-titulo-lista">Últimos movimientos</p>
+            <ul class="movs" id="inicio-movs">
+              <li><span class="cat" style="background:#9ED3B3">S</span><span><span class="que">Supermercado</span><br><span class="cuando">Hoy</span></span><span class="cifra sale">−46,82 €</span></li>
+              <li><span class="cat" style="background:#F4A89A">R</span><span><span class="que">Cena del viernes</span><br><span class="cuando">Grupo · Ayer</span></span><span class="cifra sale">−22,50 €</span></li>
+              <li><span class="cat" style="background:#A9C4EA">T</span><span><span class="que">Gasolina</span><br><span class="cuando">Ayer</span></span><span class="cifra sale">−58,40 €</span></li>
+              <li><span class="cat" style="background:#F2C230">N</span><span><span class="que">Nómina</span><br><span class="cuando">1 oct</span></span><span class="cifra entra">+2.150,00 €</span></li>
+              <li><span class="cat" style="background:#F6C98B">V</span><span><span class="que">Alquiler</span><br><span class="cuando">Recurrente · 1 oct</span></span><span class="cifra sale">−650,00 €</span></li>
+            </ul>
+          </div>
+          <span class="ui-fab"><b>+</b></span>
+          <div class="ui-nav">
+            <span class="activo"><svg><use href="#i-inicio"/></svg>Inicio</span>
+            <span><svg><use href="#i-movs"/></svg>Movimientos</span>
+            <span><svg><use href="#i-informes"/></svg>Informes</span>
+            <span><svg><use href="#i-grupo"/></svg>Compartido</span>
+            <span><svg><use href="#i-mas"/></svg>Más</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="franja" aria-hidden="true">
+  <div class="franja-pista">
+    <p>Gratis <i></i> Sin anuncios <i></i> Sin cuentas <i></i> Tus datos en tu móvil <i></i></p>
+    <p>Gratis <i></i> Sin anuncios <i></i> Sin cuentas <i></i> Tus datos en tu móvil <i></i></p>
+  </div>
+</div>
+
+<section class="seccion" id="que-hace" aria-labelledby="t-que-hace">
+  <h2 id="t-que-hace" class="sube">Qué hace, pantalla a pantalla</h2>
+  <p class="entradilla sube" style="--d:80ms">Todo lo que ves aquí está en la app de verdad. Los nombres y las cifras son de ejemplo.</p>
+
+  <div class="relato">
+    <div class="relato-movil">
+      <div class="movil">
+        <div class="pantalla" data-ui id="relato-pantalla">
+
+          <!-- 1. Informes -->
+          <div class="ui capa activa" data-capa="informes" role="img" aria-label="Informes: gastos del mes por categoría y comparación con meses anteriores">
+            <div class="ui-estado" aria-hidden="true"><span>9:41</span><span>▴ ◢ ▮</span></div>
+            <div class="ui-barra" aria-hidden="true"><h4>Informes</h4><span class="ui-avatar">D</span></div>
+            <div class="ui-cuerpo" aria-hidden="true">
+              <span class="inicio-mes">Octubre ▾</span>
+              <div class="ui-tarjeta inf-total">
+                <span class="ui-etiqueta">Gastado en octubre</span>
+                <div class="precio sale"><span class="e">901</span><span class="cts">,50</span><span class="eur">€</span></div>
+                <ul class="inf-cats">
+                  <li><span>Vivienda</span><span class="cifra">650,00 €</span><span class="barra"><i style="--c:#F6C98B" data-v="1"></i></span></li>
+                  <li><span>Supermercado</span><span class="cifra">158,62 €</span><span class="barra"><i style="--c:#9ED3B3" data-v="0.244"></i></span></li>
+                  <li><span>Transporte</span><span class="cifra">58,40 €</span><span class="barra"><i style="--c:#A9C4EA" data-v="0.09"></i></span></li>
+                  <li><span>Restaurantes</span><span class="cifra">34,48 €</span><span class="barra"><i style="--c:#F4A89A" data-v="0.053"></i></span></li>
+                </ul>
+              </div>
+              <p class="ui-titulo-lista">Últimos seis meses</p>
+              <div class="inf-meses">
+                <div><i style="--h:72%"></i>may</div><div><i style="--h:88%"></i>jun</div><div><i style="--h:100%"></i>jul</div>
+                <div><i style="--h:81%"></i>ago</div><div><i style="--h:76%"></i>sep</div><div class="este"><i style="--h:64%"></i>oct</div>
+              </div>
+            </div>
+            <div class="ui-nav" aria-hidden="true">
+              <span><svg><use href="#i-inicio"/></svg>Inicio</span><span><svg><use href="#i-movs"/></svg>Movimientos</span>
+              <span class="activo"><svg><use href="#i-informes"/></svg>Informes</span><span><svg><use href="#i-grupo"/></svg>Compartido</span><span><svg><use href="#i-mas"/></svg>Más</span>
+            </div>
+          </div>
+
+          <!-- 2. Grupos -->
+          <div class="ui capa" data-capa="grupos">
+            <div class="ui-estado" aria-hidden="true"><span>9:41</span><span>▴ ◢ ▮</span></div>
+            <div class="ui-barra"><h4>← Viaje a Asturias</h4></div>
+            <div class="ui-cuerpo">
+              <div class="gr-miembros" aria-hidden="true">
+                <span class="ui-avatar" style="background:#F2C230">Tú</span><span class="ui-avatar" style="background:#9ED3B3">L</span>
+                <span class="ui-avatar" style="background:#A9C4EA">M</span><span class="ui-avatar" style="background:#F4A89A">I</span>
+              </div>
+              <div class="gr-pestanas" aria-hidden="true"><span>Gastos</span><span class="activo">Saldos</span></div>
+              <div class="ui-tarjeta">
+                <ul class="gr-saldos" id="gr-saldos" aria-label="Saldos del grupo">
+                  <li data-p="Lucía"><span>Lucía</span><span class="cifra entra">+84,20 €</span></li>
+                  <li data-p="Tú"><span>Tú</span><span class="cifra sale">−12,60 €</span></li>
+                  <li data-p="Marcos"><span>Marcos</span><span class="cifra sale">−41,10 €</span></li>
+                  <li data-p="Irene"><span>Irene</span><span class="cifra sale">−30,50 €</span></li>
+                </ul>
+              </div>
+              <p class="ui-titulo-lista">Para quedar en paz</p>
+              <ul class="gr-liq" id="gr-liq">
+                <li data-de="Marcos" data-c="4110"><span class="quien">Marcos → Lucía</span><span class="cifra">41,10 €</span><button type="button">Marcar pagado</button></li>
+                <li data-de="Irene" data-c="3050"><span class="quien">Irene → Lucía</span><span class="cifra">30,50 €</span><button type="button">Marcar pagado</button></li>
+                <li data-de="Tú" data-c="1260"><span class="quien">Tú → Lucía</span><span class="cifra">12,60 €</span><button type="button">Marcar pagado</button></li>
+              </ul>
+              <p class="gr-hecho" id="gr-hecho" aria-live="polite"></p>
+            </div>
+            <div class="ui-nav" aria-hidden="true">
+              <span><svg><use href="#i-inicio"/></svg>Inicio</span><span><svg><use href="#i-movs"/></svg>Movimientos</span>
+              <span><svg><use href="#i-informes"/></svg>Informes</span><span class="activo"><svg><use href="#i-grupo"/></svg>Compartido</span><span><svg><use href="#i-mas"/></svg>Más</span>
+            </div>
+          </div>
+
+          <!-- 3. Presupuestos -->
+          <div class="ui capa" data-capa="presupuestos" role="img" aria-label="Presupuestos de octubre: supermercado al 78 %, ocio al 93 %, restaurantes pasado de límite y transporte al 40 %; y gastos recurrentes">
+            <div class="ui-estado" aria-hidden="true"><span>9:41</span><span>▴ ◢ ▮</span></div>
+            <div class="ui-barra" aria-hidden="true"><h4>← Presupuestos</h4></div>
+            <div class="ui-cuerpo" aria-hidden="true">
+              <p class="ui-etiqueta" style="margin-bottom:.6em">Octubre · aviso al llegar al 80 %</p>
+              <ul class="pr-lista" id="pr-lista">
+                <li data-g="312.40" data-l="400"><span class="nombre">Supermercado</span><span class="pct">0 %</span><span class="barra"><i></i></span><span class="cuanto">312,40 € de 400 €</span></li>
+                <li data-g="186.00" data-l="200"><span class="nombre">Ocio</span><span class="pct">0 %</span><span class="barra"><i></i></span><span class="cuanto">186,00 € de 200 €</span></li>
+                <li data-g="164.50" data-l="150"><span class="nombre">Restaurantes</span><span class="pct">0 %</span><span class="barra"><i></i></span><span class="cuanto">164,50 € de 150 €</span></li>
+                <li data-g="48.20" data-l="120"><span class="nombre">Transporte</span><span class="pct">0 %</span><span class="barra"><i></i></span><span class="cuanto">48,20 € de 120 €</span></li>
+              </ul>
+              <div class="ui-tarjeta pr-rec">
+                <span class="ui-etiqueta">Recurrentes · se apuntan solos</span>
+                <ul>
+                  <li><span>Alquiler · día 1</span><span class="cifra sale">650,00 €</span></li>
+                  <li><span>Gimnasio · día 5</span><span class="cifra sale">34,90 €</span></li>
+                  <li><span>Seguro del coche · día 15</span><span class="cifra sale">41,20 €</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="ui-nav" aria-hidden="true">
+              <span><svg><use href="#i-inicio"/></svg>Inicio</span><span><svg><use href="#i-movs"/></svg>Movimientos</span>
+              <span><svg><use href="#i-informes"/></svg>Informes</span><span><svg><use href="#i-grupo"/></svg>Compartido</span><span class="activo"><svg><use href="#i-mas"/></svg>Más</span>
+            </div>
+          </div>
+
+          <!-- 4. Ticket → grupo -->
+          <div class="ui capa" data-capa="ticket" role="img" aria-label="Foto de un ticket de 63,90 € que la app lee y convierte en un gasto del grupo repartido entre cuatro personas">
+            <div class="ui-estado" aria-hidden="true"><span>9:41</span><span>▴ ◢ ▮</span></div>
+            <div class="ui-barra" aria-hidden="true"><h4>← Desde ticket</h4></div>
+            <div class="ui-cuerpo" aria-hidden="true">
+              <div class="tk-foto" id="tk-foto">
+                <span class="tk-scan"></span>
+                <div class="tienda"><mark>SUPERMERCADO EL PUERTO</mark></div>
+                <div class="dir">C/ del Muelle 12 · Gijón<br><mark>21/10/2026</mark> 20:14</div>
+                <div class="ln"><span>Pan</span><span>2,40</span></div>
+                <div class="ln"><span>Queso de Cabrales</span><span>14,90</span></div>
+                <div class="ln"><span>Sidra x4</span><span>11,60</span></div>
+                <div class="ln"><span>Fabes</span><span>6,95</span></div>
+                <div class="ln"><span>Chorizo</span><span>4,80</span></div>
+                <div class="ln"><span>Fruta</span><span>8,25</span></div>
+                <div class="ln"><span>Agua</span><span>2,10</span></div>
+                <div class="ln"><span>Vino tinto</span><span>12,90</span></div>
+                <div class="ln tot"><span>TOTAL</span><span><mark>63,90</mark></span></div>
+              </div>
+              <div class="tk-gasto" id="tk-gasto">
+                <h5>Supermercado El Puerto</h5>
+                <span class="ui-etiqueta">Viaje a Asturias · 21 oct · pagaste tú</span>
+                <div class="precio"><span class="e">63</span><span class="cts">,90</span><span class="eur">€</span></div>
+                <ul>
+                  <li><span>Tú</span><span class="cifra">15,98 €</span></li>
+                  <li><span>Lucía</span><span class="cifra">15,98 €</span></li>
+                  <li><span>Marcos</span><span class="cifra">15,97 €</span></li>
+                  <li><span>Irene</span><span class="cifra">15,97 €</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Widget + asistente -->
+          <div class="ui capa" data-capa="widget">
+            <div class="wg-fondo" aria-hidden="true"></div>
+            <div class="ui-estado" aria-hidden="true" style="position:relative;color:#fff"><span>9:41</span><span>▴ ◢ ▮</span></div>
+            <div class="wg-widget" aria-hidden="true">
+              <div class="fila"><span class="logo">AL CÉNTIMO</span><span class="ui-etiqueta">Octubre</span></div>
+              <div class="precio sale"><span class="e">901</span><span class="cts">,50</span><span class="eur">€</span></div>
+              <div class="wg-botones"><span class="g">− Gasto</span><span class="i">+ Ingreso</span><span class="ia"><svg><use href="#i-ia"/></svg></span></div>
+            </div>
+            <div class="wg-hoja" id="wg-hoja">
+              <div class="tit">Apuntar con una frase <span class="beta">Beta</span></div>
+              <div class="wg-campo"><span id="wg-texto"></span><span class="cursor" aria-hidden="true"></span></div>
+              <div class="wg-entendido" id="wg-entendido" aria-live="polite">
+                <p class="ui-etiqueta">Esto es lo que he entendido:</p>
+                <dl id="wg-dl"></dl>
+                <div class="wg-acciones" aria-hidden="true"><span>Corregir</span><span class="ok">Guardar</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="relato-pasos">
+      <article class="paso" data-paso="informes">
+        <h3 class="sube">En qué se te va el dinero</h3>
+        <p class="sube" style="--d:70ms">Apunta gastos e ingresos en segundos, cada uno con su categoría. El Inicio te dice cuánto te queda este mes, e Informes, en qué se ha ido y cómo vas frente a los meses anteriores.</p>
+        <p class="nota sube" style="--d:140ms">Verde lo que entra, rojo lo que sale. Y con perfiles separados, si quieres llevar aparte las cuentas de casa.</p>
+      </article>
+      <article class="paso" data-paso="grupos">
+        <h3 class="sube">Cuentas claras con los amigos</h3>
+        <p class="sube" style="--d:70ms">Crea un grupo para el viaje, el piso o la cena del viernes. Cada uno apunta lo que paga y la app calcula quién debe a quién con el menor número de pagos.</p>
+        <p class="nota sube" style="--d:140ms">Comparte el grupo con un enlace y todos lo veis igual en vuestro móvil. Prueba a pulsar «Marcar pagado» en la pantalla.</p>
+      </article>
+      <article class="paso" data-paso="presupuestos">
+        <h3 class="sube">Un aviso antes de pasarte</h3>
+        <p class="sube" style="--d:70ms">Ponle un límite al mes a cada categoría. Te avisa al llegar al 80 %, al llegar al límite y cada vez que lo pasas. No bloquea nada: solo te lo cuenta.</p>
+        <p class="nota sube" style="--d:140ms">Y los gastos fijos, como el alquiler o el gimnasio, se apuntan solos cada mes con los recurrentes, aunque no abras la app.</p>
+      </article>
+      <article class="paso" data-paso="ticket">
+        <h3 class="sube">Una foto al ticket y repartido</h3>
+        <p class="sube" style="--d:70ms">Haz una foto al ticket desde un grupo: el móvil lee el comercio, la fecha y el total sin subir la imagen a ningún sitio, y el gasto se reparte entre los que estabais.</p>
+        <p class="nota sube" style="--d:140ms">La foto se queda guardada en el grupo, por si alguien quiere revisarla.</p>
+      </article>
+      <article class="paso" data-paso="widget">
+        <h3 class="sube">Apúntalo sin abrir la app</h3>
+        <p class="sube" style="--d:70ms">Desde el widget de la pantalla de inicio apuntas un gasto o un ingreso en dos toques. Y con el asistente lo escribes o lo dictas tal cual lo dirías. Elige una frase:</p>
+        <div class="frases sube" style="--d:110ms" role="group" aria-label="Frases de ejemplo para el asistente">
+          <button type="button" class="frase-btn" data-f="0" aria-pressed="true">«Cena de 45 € con dos amigos, pagué yo»</button>
+          <button type="button" class="frase-btn" data-f="1" aria-pressed="false">«Gasolina, 60 €»</button>
+          <button type="button" class="frase-btn" data-f="2" aria-pressed="false">«Me han pagado 120 € por la clase»</button>
+        </div>
+        <p class="nota sube" style="--d:160ms"><span class="beta-txt">Beta.</span> El asistente usa Gemma, un modelo de IA que funciona dentro del móvil, sin internet. Se descarga aparte desde Ajustes (unos 2,6 GB, solo con wifi) y va mejor en móviles con 8 GB de RAM.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="seccion campo-amarillo reparto" id="reparte" aria-labelledby="t-reparte">
+  <div class="cabeza">
+    <h2 id="t-reparte" class="sube">Repartido sin perder un céntimo</h2>
+    <p class="entradilla sube" style="--d:80ms">Pon lo que costó la cena y cuántos erais. Cuando no sale exacto, la app reparte el céntimo que sobra para que la suma cuadre siempre. Pruébalo:</p>
+  </div>
+  <div class="control" data-ui>
+    <div class="control-entrada">
+      <div>
+        <label for="rp-importe">Lo que costó</label>
+        <div class="importe"><input id="rp-importe" type="text" inputmode="decimal" value="100,00" autocomplete="off" aria-describedby="rp-ayuda"><span>€</span></div>
+        <p id="rp-ayuda" class="solo-lector">Escribe el importe en euros, con coma para los céntimos.</p>
+      </div>
+      <div>
+        <span class="lbl" id="rp-lbl-personas">Cuántos erais</span>
+        <div class="personas" role="group" aria-labelledby="rp-lbl-personas">
+          <button type="button" id="rp-menos" aria-label="Una persona menos">−</button>
+          <output id="rp-personas" aria-live="polite">3</output>
+          <button type="button" id="rp-mas" aria-label="Una persona más">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="resultado" aria-live="polite">
+      <p class="res-titulo" id="rp-titulo">Sobra un céntimo, y se lo lleva alguien</p>
+      <ul id="rp-lista">
+        <li class="extra"><span class="ui-avatar" style="background:#F2C230">Tú</span><span>Tú</span><span class="precio"><span class="e">33</span><span class="cts">,34</span><span class="eur">€</span></span></li>
+        <li><span class="ui-avatar" style="background:#9ED3B3">L</span><span>Lucía</span><span class="precio"><span class="e">33</span><span class="cts">,33</span><span class="eur">€</span></span></li>
+        <li><span class="ui-avatar" style="background:#A9C4EA">M</span><span>Marcos</span><span class="precio"><span class="e">33</span><span class="cts">,33</span><span class="eur">€</span></span></li>
+      </ul>
+      <p class="suma"><span>Suma de las partes: <strong id="rp-suma">100,00 €</strong></span><span id="rp-cuadra">Cuadra con el total</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion novedades" id="novedades" aria-labelledby="t-novedades">
+  <div class="cabeza">
+    <h2 id="t-novedades" class="titulo-seccion sube">Novedades de la <span data-v="version">v1.5.2</span></h2>
+    <p class="sube" style="--d:80ms">Publicada el <span data-v="fecha">20 de octubre de 2026</span> · <span data-v="tamano">115 MB</span></p>
+  </div>
+  <ol class="cartel" id="cartel" reversed>
+    <li class="menor"><span class="grande">Inicio: ya no aparece scroll cuando no hay ningún aviso de presupuesto.</span><span class="ver-tag">v1.5.2 · 20 oct</span></li>
+    <li><span class="grande">Apuntar con una frase, por voz</span><span class="ver-tag">v1.5.1 · 20 oct</span><span class="detalle">Botón de micrófono en el cuadro de texto del widget; lo dictado se escribe y se interpreta directamente.</span></li>
+    <li><span class="grande">Gastos recurrentes</span><span class="ver-tag">v1.5.0 · 20 oct</span><span class="detalle">Se apuntan solos en su fecha, también con la app cerrada, y se pueden pausar, editar y borrar.</span></li>
+    <li><span class="grande">Presupuestos por categoría</span><span class="ver-tag">v1.5.0 · 20 oct</span><span class="detalle">Límite mensual con aviso al llegar al 80 %, al alcanzar el límite y si lo superas.</span></li>
+    <li><span class="grande">Tickets y recibos en los grupos</span><span class="ver-tag">v1.5.0 · 20 oct</span><span class="detalle">La foto del ticket se guarda en el grupo; en los compartidos viaja cifrada.</span></li>
+  </ol>
+  <p class="todas">¿Buscas una versión anterior? Están todas en la <a href="https://github.com/vidaviprod/alcentimo-app/releases" id="enlace-versiones">lista de versiones</a>.</p>
+</section>
+
+<section class="privacidad" id="privacidad" aria-labelledby="t-privacidad">
+  <div class="seccion-cab">
+    <h2 id="t-privacidad" class="titulo-seccion sube">Tus datos, en tu móvil</h2>
+    <p class="entradilla sube" style="--d:80ms">Sin cuentas, sin anuncios y sin analítica. Lo opcional viene apagado y lo enciendes tú. Toca cada frase para ver qué significa.</p>
+  </div>
+  <ul class="interruptores">
+    <li class="banda on">
+      <div><p class="frase" id="sw1">Tus gastos se quedan en tu móvil</p>
+        <p class="consecuencia">Se guardan en una base de datos privada dentro del teléfono. No hay registro ni publicidad, y el desarrollador no puede leer ningún dato tuyo.</p></div>
+      <button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="sw1"></button>
+    </li>
+    <li class="banda">
+      <div><p class="frase" id="sw2">Copia en tu propio Google Drive</p>
+        <p class="consecuencia">Opcional. Usa una carpeta oculta de la app dentro de tu Drive: no puede ver el resto de tus archivos y los datos van directos de tu móvil a tu cuenta.</p></div>
+      <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="sw2"></button>
+    </li>
+    <li class="banda on">
+      <div><p class="frase" id="sw3">Grupos cifrados de extremo a extremo</p>
+        <p class="consecuencia">Cada grupo compartido tiene su propia clave, que viaja en el enlace de invitación y nunca llega al servidor. El buzón que sincroniza el grupo solo guarda texto cifrado.</p></div>
+      <button type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="sw3"></button>
+    </li>
+    <li class="banda">
+      <div><p class="frase" id="sw4">Tickets leídos en el propio móvil</p>
+        <p class="consecuencia">La cámara lee el texto del ticket sin subir la foto a ningún sitio. Si descargas Gemma (beta), también los interpreta sin internet.</p></div>
+      <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="sw4"></button>
+    </li>
   </ul>
+  <p class="pie-priv sube">Todos los detalles, en la <a href="privacidad.html">política de privacidad</a>.</p>
+</section>
 
-  <p class="privacy">Lee la <a href="privacidad.html">política de privacidad</a> para saber exactamente qué datos
-  maneja la app y dónde se guardan.</p>
+<section class="seccion" id="instalar" aria-labelledby="t-instalar">
+  <h2 id="t-instalar" class="sube">Instalarla lleva un minuto</h2>
+  <ol class="etapas">
+    <li class="etapa sube" style="--g:50"><span class="seg">Un minuto con wifi</span>
+      <p><strong>Primero,</strong> descarga el APK desde esta página. Pesa unos <span data-v="tamano">115 MB</span>.</p></li>
+    <li class="etapa sube" style="--g:15;--d:80ms"><span class="seg">Un toque, la primera vez</span>
+      <p><strong>Después,</strong> cuando Android lo pida, permite instalar apps de esta fuente (el navegador o Archivos).</p></li>
+    <li class="etapa sube" style="--g:25;--d:160ms"><span class="seg">Unos segundos</span>
+      <p><strong>Por último,</strong> abre el archivo, pulsa Instalar y abre la app. Ya está.</p></li>
+  </ol>
+  <div class="actualizar">
+    <h3 class="sube">Para actualizar, instálala encima</h3>
+    <div class="sube" style="--d:80ms">
+      <p>Cuando salga una versión nueva, vuelve a esta página, descárgala e instálala sin desinstalar la anterior. Tus movimientos, grupos y ajustes se quedan como estaban.</p>
+      <p>Necesitas Android 8.0 o superior. Si Google Play Protect avisa de que la app no viene de Google Play, puedes analizarla o elegir instalarla de todas formas.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <span>Al Céntimo</span>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="mailto:vidaviprod@gmail.com">Contacto</a>
-  </footer>
+<section class="campo-oscuro cierre" aria-labelledby="t-cierre">
+  <h2 id="t-cierre" class="sube"><span class="linea">¿Cuadramos</span> <span class="linea">las cuentas?</span></h2>
+  <div class="medio sube" style="--d:100ms">
+    <div class="opciones">
+      <a class="boton boton-marca js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">
+        <svg aria-hidden="true"><use href="#i-bajar"/></svg>Descargar APK</a>
+      <span class="o">o</span>
+      <a class="boton boton-claro" href="mailto:vidaviprod@gmail.com?subject=Al%20C%C3%A9ntimo">Escribir a David</a>
+    </div>
+    <p class="explica">La descarga es gratis y directa (<span data-v="version">v1.5.2</span>, <span data-v="tamano">115 MB</span>). Si algo falla o se te ocurre una mejora, escribe a <a href="mailto:vidaviprod@gmail.com">vidaviprod@gmail.com</a>.</p>
+  </div>
+</section>
+
 </main>
+
+<footer class="pie">
+  <p class="solo-lector">Al Céntimo</p>
+  <div class="marca-bloques" aria-hidden="true">
+    <span style="--h:78%">A</span><span style="--h:100%">L</span><span class="hueco"></span><span style="--h:88%">C</span><span style="--h:70%">É</span><span style="--h:96%">N</span><span style="--h:82%">T</span><span style="--h:100%">I</span><span style="--h:74%">M</span><span style="--h:90%">O</span>
+  </div>
+  <div class="pie-columnas">
+    <div><h3>La app</h3><ul><li><a href="#que-hace">Qué hace</a></li><li><a href="#reparte">Reparte</a></li><li><a href="#novedades">Novedades</a></li></ul></div>
+    <div><h3>Instalar</h3><ul><li><a href="#instalar">Cómo instalarla</a></li><li><a class="js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">Descargar APK</a></li><li><a href="https://github.com/vidaviprod/alcentimo-app/releases">Todas las versiones</a></li></ul></div>
+    <div><h3>Privacidad</h3><ul><li><a href="privacidad.html">Política de privacidad</a></li><li><a href="#privacidad">Tus datos</a></li></ul></div>
+    <div class="contacto"><h3>Contacto</h3><ul><li><a href="mailto:vidaviprod@gmail.com">vidaviprod@gmail.com</a></li><li>Hecho en España por David, para sus amigos.</li></ul></div>
+  </div>
+  <div class="pie-final">
+    <span>© 2026 Al Céntimo · App para Android. No está en Google Play: se descarga desde aquí.</span>
+    <a class="boton boton-marca js-descarga" href="https://github.com/vidaviprod/alcentimo-app/releases/latest/download/alcentimo.apk">Descargar</a>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/qr.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

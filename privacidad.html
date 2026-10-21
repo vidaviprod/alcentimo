@@ -39,13 +39,13 @@
 <main class="wrap">
   <a class="back" href="./">← Al Céntimo</a>
   <h1>Política de privacidad</h1>
-  <p class="date">Última actualización: 29 de septiembre de 2026</p>
+  <p class="date">Última actualización: 21 de octubre de 2026</p>
 
   <div class="summary">
-    <p><strong>En resumen:</strong> tus datos se guardan en tu móvil. Al Céntimo no tiene servidores, cuentas,
-    anuncios ni analítica, y el desarrollador no recibe ningún dato tuyo. Solo salen del móvil si activas
-    tú alguna función opcional (Gemini o la sincronización con Google Drive), y entonces van a tu propia
-    cuenta de Google, nunca a nosotros.</p>
+    <p><strong>En resumen:</strong> tus datos se guardan en tu móvil. Al Céntimo no tiene cuentas, anuncios
+    ni analítica, y el desarrollador no puede leer ningún dato tuyo. Solo salen del móvil si usas tú alguna
+    función opcional: Gemini o la sincronización con Google Drive (van a tu propia cuenta de Google) o un grupo
+    compartido (viaja cifrado de extremo a extremo por un buzón que nadie más que los miembros puede leer).</p>
   </div>
 
   <h2>Quién es el responsable</h2>
@@ -56,12 +56,34 @@
   <h2>Qué datos maneja la app y dónde se guardan</h2>
   <p>Todo lo que introduces (movimientos, categorías, perfiles, grupos de gastos compartidos, deudas y sus
   fotos, y los datos leídos de tus facturas) se guarda en una base de datos privada dentro de tu móvil.
-  No se envía a ningún servidor del desarrollador, porque no existe ninguno.</p>
+  No se envía a ningún servidor del desarrollador. La única excepción son los grupos que decidas compartir,
+  que se explican más abajo y que viajan cifrados.</p>
   <ul>
     <li><strong>Cámara:</strong> se usa solo para escanear tickets. El reconocimiento del texto se hace en el propio móvil.</li>
     <li><strong>Carpetas y archivos que eliges:</strong> la app solo accede a las carpetas o archivos que tú seleccionas
       (copia automática, facturas, importar o exportar datos, fotos de perfil).</li>
     <li><strong>Widget:</strong> muestra en tu pantalla de inicio un resumen de tus datos; no los envía a ningún sitio.</li>
+  </ul>
+
+  <h2>Grupos compartidos</h2>
+  <p>Un grupo de gastos se queda solo en tu móvil hasta que lo compartes. Al compartirlo, la app crea un enlace de
+  invitación y, a partir de ahí, los móviles de los miembros se mantienen al día a través de un buzón: un pequeño
+  servicio que el desarrollador tiene alojado en Cloudflare (Cloudflare Workers y su base de datos D1).</p>
+  <ul>
+    <li><strong>Cifrado de extremo a extremo:</strong> cada grupo compartido tiene su propia clave AES-256, creada en
+      el móvil. La clave va en el enlace de invitación, en la parte que hay detrás de la <code>#</code>, y esa parte de
+      un enlace nunca se envía a ningún servidor. Solo la tienen los móviles de quienes reciben el enlace.</li>
+    <li><strong>Qué guarda el buzón:</strong> lo que compartís en el grupo (su nombre, los miembros, los gastos y pagos, y
+      las fotos de tickets y recibos que añadáis) se cifra en el móvil antes de salir. El buzón solo recibe y guarda ese
+      texto cifrado, junto con un identificador aleatorio del grupo y la fecha en que llegó cada mensaje. Ni el
+      desarrollador ni Cloudflare pueden leerlo.</li>
+    <li><strong>Quién lo ve:</strong> todos los que tengan el enlace del grupo. Compártelo solo con los miembros: quien
+      lo tenga puede ver y añadir gastos.</li>
+    <li><strong>Conexión:</strong> como cualquier servicio en internet, Cloudflare recibe la dirección IP de tu conexión
+      para poder responder. El buzón no la guarda ni la relaciona con nada.</li>
+    <li><strong>Cuánto tiempo:</strong> los mensajes cifrados se guardan mientras exista el buzón, para que cualquier
+      miembro pueda ponerse al día. Borrar el grupo de tu móvil no los borra, porque los demás lo siguen usando. Si
+      alguien borra una foto del grupo, también se borra del buzón.</li>
   </ul>
 
   <h2>Funciones opcionales que envían datos a Google</h2>
@@ -105,9 +127,9 @@
   <p>La app no está dirigida a menores de 14 años ni recoge conscientemente datos suyos.</p>
 
   <h2>Tus derechos</h2>
-  <p>Como el desarrollador no guarda datos tuyos, no hay nada que consultar, corregir o borrar por su parte: todo
-  está en tu dispositivo y en tu cuenta de Google. Aun así, puedes escribir al correo de contacto para cualquier
-  consulta. También tienes derecho a reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+  <p>Casi todo está en tu dispositivo y en tu cuenta de Google, así que lo controlas tú directamente. Lo único que
+  guarda el desarrollador es el contenido cifrado de los grupos compartidos, que no puede leer. Para cualquier
+  consulta, escribe al correo de contacto. También tienes derecho a reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
 
   <h2>Cambios en esta política</h2>
   <p>Si la app cambia su forma de tratar los datos, se actualizará esta página y la fecha de arriba.</p>
