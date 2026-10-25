@@ -1,27 +1,26 @@
 {
-  "version": "1.5.2",
-  "fecha": "2026-10-20",
+  "version": "1.6.0",
+  "fecha": "2026-10-25",
   "tamano": 115355507,
   "novedades": [
-    "Inicio: ya no aparece scroll cuando no hay ningún aviso de presupuesto."
+    "**Recurrentes: aviso antes del cobro.** Los dos días antes de que se apunte un recurrente llega una notificación («En 2 días se cobra: Netflix», «Mañana entra: Nómina») con el importe y la fecha. Va en un canal nuevo, «Próximos recurrentes», que se puede silenciar aparte en los ajustes de Android.",
+    "Recurrentes: el día que se apunta sigue llegando el aviso de «Apuntado», y el de «Mañana se cobra» se quita solo."
   ],
   "anteriores": [
     {
-      "version": "1.5.1",
-      "fecha": "2026-10-20",
+      "version": "1.5.3",
+      "fecha": "2026-10-24",
       "novedades": [
-        "**Apuntar con una frase (beta), ahora por voz**: botón de micrófono en el cuadro de texto del widget; lo dictado se escribe y se interpreta directamente.",
-        "Ejemplos de ayuda más claros en el cuadro de texto."
+        "**Apuntar con una frase entiende lo que pagó cada uno**: «Cené con Javi y Radu, Javi pagó 5, Radu 13 y yo 8». En la revisión se pueden corregir los importes.",
+        "Grupos: al salir o eliminar un grupo quitando también tus gastos, desaparecen de tus movimientos al momento.",
+        "Grupos: la ventana de salir o eliminar usa los colores del tema."
       ]
     },
     {
-      "version": "1.5.0",
+      "version": "1.5.2",
       "fecha": "2026-10-20",
       "novedades": [
-        "**Gastos recurrentes**: se apuntan solos en su fecha, también con la app cerrada, y se pueden pausar, editar y borrar.",
-        "**Presupuestos por categoría**: límite mensual con aviso al llegar al 80 %, al alcanzar el límite y si lo superas.",
-        "**Tickets y recibos en los grupos**: la foto del ticket se guarda en el grupo; en los compartidos viaja cifrada.",
-        "**Apuntar con una frase (beta)**: desde el widget, con Gemma descargado, entiende frases como «Cena de 60 € con dos amigos, pagué yo»."
+        "Inicio: ya no aparece scroll cuando no hay ningún aviso de presupuesto."
       ]
     }
   ]
