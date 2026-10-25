@@ -58,7 +58,8 @@
     if (!valor) return;
     document.querySelectorAll('[data-v="' + clave + '"]').forEach(function (el) { el.textContent = valor; });
   }
-  function limpiarVersion(tag) { return String(tag || "").replace(/^v/i, "").trim(); }
+  // "v1.6.0", "1.6.0" y también "v.1.6.0" dan "1.6.0".
+  function limpiarVersion(tag) { return String(tag || "").trim().replace(/^v\.?\s*/i, ""); }
   function compararVersiones(a, b) {
     var x = a.split("."), y = b.split(".");
     for (var i = 0; i < Math.max(x.length, y.length); i++) {
@@ -121,7 +122,25 @@
     try { localStorage.setItem("alcentimo:version-vista", version); } catch (e) { /* sin almacenamiento */ }
   }
 
+  // La API de GitHub sin autenticar admite 60 peticiones por hora y por IP, así que la respuesta se
+  // guarda 15 minutos. Si la API falla, se usa la última guardada aunque sea vieja, y solo después version.json.
+  var CACHE = "alcentimo:releases", CACHE_MS = 15 * 60 * 1000;
+  function leerCache() {
+    try { return JSON.parse(localStorage.getItem(CACHE)); } catch (e) { return null; }
+  }
+  function guardarCache(info) {
+    try { localStorage.setItem(CACHE, JSON.stringify({ t: Date.now(), info: info })); } catch (e) { /* sin almacenamiento */ }
+    return info;
+  }
   function desdeGitHub() {
+    var c = leerCache();
+    if (c && c.info && Date.now() - c.t < CACHE_MS) return Promise.resolve(c.info);
+    return pedirGitHub().then(guardarCache, function (err) {
+      if (c && c.info) return c.info;
+      throw err;
+    });
+  }
+  function pedirGitHub() {
     return fetch(API, { headers: { Accept: "application/vnd.github+json" } })
       .then(function (r) { if (!r.ok) throw new Error("API " + r.status); return r.json(); })
       .then(function (rels) {
@@ -140,15 +159,33 @@
         };
       });
   }
-  function desdeLocal() {
-    return fetch("version.json", { cache: "no-cache" })
-      .then(function (r) { if (!r.ok) throw new Error("version.json " + r.status); return r.json(); })
+  // version.json: el del repositorio de releases (lo regenera una GitHub Action en cada release) o el de esta web.
+  function desdeJson(url) {
+    return fetch(url, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); })
       .then(function (j) {
-        var lista = [{ version: j.version, fecha: j.fecha, novedades: j.novedades || [] }].concat(j.anteriores || []);
-        return { version: j.version, fecha: j.fecha, tamano: j.tamano, lista: lista };
+        var version = limpiarVersion(j.version);
+        var lista = [{ version: version, fecha: j.fecha, novedades: j.novedades || [] }].concat(j.anteriores || []);
+        return { version: version, fecha: j.fecha, tamano: j.tamano, lista: lista };
       });
   }
-  desdeGitHub().catch(desdeLocal).then(aplicar).catch(function () { /* se queda lo que trae el HTML */ });
+  function conTiempo(promesa, ms) {
+    return new Promise(function (ok, mal) {
+      setTimeout(function () { mal(new Error("tiempo")); }, ms);
+      promesa.then(ok, mal);
+    });
+  }
+  // Se piden las tres fuentes a la vez y gana la versión más alta: así basta con que una esté al día.
+  var URL_VERSION_REMOTA = "https://raw.githubusercontent.com/" + cfg.usuario + "/" + cfg.repo + "/" + (cfg.rama || "main") + "/version.json";
+  Promise.all([desdeJson(URL_VERSION_REMOTA), desdeGitHub(), desdeJson("version.json")].map(function (p) {
+    return conTiempo(p, 6000).catch(function () { return null; });
+  })).then(function (fuentes) {
+    var mejor = null;
+    fuentes.forEach(function (f) {
+      if (f && f.version && (!mejor || compararVersiones(f.version, mejor.version) > 0)) mejor = f;
+    });
+    if (mejor) aplicar(mejor); // si no hay ninguna, se queda lo que trae el HTML
+  });
 
   // ---------- Quien no está en Android ----------
   var esAndroid = /android/i.test(navigator.userAgent || "");
